@@ -9,6 +9,16 @@ public class Music {
     }
 
     public Integer selection(Integer startIndex, String selection){
-        return null;
+        Integer goalIndex = 0;
+        for (int i=0; i<playList.length; i++){
+            if (playList[i].equals(selection)){
+                goalIndex = i;
+            }
+        }
+        if (goalIndex - startIndex < 3){
+            return goalIndex - startIndex;
+        } else {
+            return playList.length - (goalIndex - startIndex);
+        }
     }
 }
